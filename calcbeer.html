@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cerveja</title>
+</head>
+
+<body>
+
+    <h1 id="welcome">Olá cervejeiro</h1>
+    <h1>Seu calculador de cerveja</h1>
+    <h2>Instruções</h2>
+    <ol>
+        <li>Descrfeva os volumes</li>
+        <li>Descrfeva os preços</li>
+        <li>Clique no botão e compare</li>
+    </ol>
+    <div>
+        <!--campos das cervejas-->
+        <div class="calc-beer-input">
+            <h3>Cerveja 1 </h3>
+
+            <label> Quantidade</label>
+            <input type="text" id="quant1" placeholder="ml"> <br>
+            <label> Preço </label>
+            <input type="text" id="price1"placeholder="R$">
+        </div>
+        <br>
+        <div class="calc-beer-input">
+            <h3>Cerveja 2 </h3>
+            <label> Quantidade</label>
+            <input type="text" id="quant2" placeholder="ml"><br>
+            <label> Preço </label>
+        // pegar valor da cerveja e dividir pelo ṕreço
+            <input type="text" id="price2" placeholder="R$"><br>
+            <button id="calc-button">Calcular</button>
+        </div>
+        <div id="result"
+            <h3>Campo Resultado</h3>
+   
+        </div>
+    </div>
+</body>
+<style>
+    h1{
+        color: rgb(5, 2, 2);
+        text-align: center;
+    }
+    .calc-beer-input{
+
+        border-style: solid;
+        border-width: 1px;
+    }
+    #welcome{
+        background-color: rgb(235, 152, 0);
+    }
+</style>
+<script>
+    // definir variaveis
+    const calcButton = document.getElementById("calc-button")
+    calcButton.addEventListener("click",function(){
+        console.log("click")
+        // pegar valor da cerveja e dividir pelo ṕreço
+        const beer1volume = document.getElementById("quant1").value
+        const beer1price = document.getElementById("price1").value
+
+        const calcbeer1 = (parseFloat(beer1price) / parseFloat(beer1volume) * 1000).toFixed(2)
+
+        // pegar valor da cerveja 2 e dividir pelo ṕreço
+        const beer2volume = document.getElementById("quant2").value
+        const beer2price = document.getElementById("price2").value
+
+        const calcbeer2 = (parseFloat(beer2price) / parseFloat(beer2volume) * 1000).toFixed(2)
+
+        const result = document.getElementById("result")
+        result.innerText = "O litro da cerveja 1 está custando " + calcbeer1 + " e o litro da cerveja 2 está custando " + calcbeer2
+        console.log(calcbeer1)
+        console.log(calcbeer2)
+    })
+</script>
+</html>
